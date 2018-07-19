@@ -16,6 +16,10 @@ class Topic extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function topReplies() {
+        return $this->replies()->limit(5);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
